@@ -1,0 +1,1 @@
+xdotool behave_screen_edge top exec ~/lemon/xshow

@@ -7,7 +7,7 @@ PANEL_WM_NAME=bspwm_panel
 
 
 COLOR_DEFAULT_FG="#3D4750"
-#COLOR_DEFAULT_BG="#343c48"
+COLOR_DEFAULT_BG="#0A131A"
 COLOR_MONITOR_FG="#dee3e0"
 #COLOR_MONITOR_BG="#343c48"
 COLOR_FOCUSED_MONITOR_FG="#dee3e0"
@@ -26,7 +26,7 @@ COLOR_FOCUSED_URGENT_FG="#b48ead"
 COLOR_FOCUSED_URGENT_BG="#ba5e57"
 #COLOR_STATE_FG="#343c48"
 #COLOR_STATE_BG="#343c48"
-COLOR_SYS_FG="#C4D2E0"
+COLOR_SYS_FG="#8D9EA8"
 COLOR_SYS_BG="#0B131B"
 #COLOR_TITLE_FG="#859071"
 #COLOR_TITLE_BG="#0A131A"
@@ -187,12 +187,12 @@ while read -r line ; do
 	esac
 
 
-			printf "%s\n" "%{l}${wm}%{r}${vol}${sys}"
+			printf "%s\n" "%{l} ${wm}%{c}${vol}-${sys}"
 done
 }
 
 
-bar_wm < "$PANEL_FIFO" | lemonbar -r -a 30 -u 2 -n "$PANEL_WM_NAME" -g 1355x20 -f "gohufont:size=9" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &
+bar_wm < "$PANEL_FIFO" | lemonbar -g 1366x24+0+0 -a 30 -u 2 -n "$PANEL_WM_NAME" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &
 
 wid=$(xdo id -a "$PANEL_WM_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"

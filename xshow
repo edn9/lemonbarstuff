@@ -1,0 +1,1 @@
+xdotool search --name 'panel' windowmap && xdotool search --name 'stalonetray' windowmap && bspc config top_padding 24
